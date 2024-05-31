@@ -65,5 +65,5 @@ user_name = st.text_input("Please enter your name")
 # Check if the user has entered a name
 if user_name:
     # Define Don's response with personalized greeting
-    rex_response = f"Hello, {user_name}! I'm Don, an assistant powered by Google Gemini. How can I assist you today?"
-    st.write(rex_response)
+    don_response = f"Hello, {user_name}! I'm Don, an assistant powered by Google Gemini. How can I assist you today?"
+    st.write(don_response)
