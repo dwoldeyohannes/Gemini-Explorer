@@ -52,9 +52,18 @@ for index, message in enumerate(st.session_state.messages):
     )
 
 # to capture user input
-query = st.chat_input("Don GPT")
+query = st.chat_input("Write your message here...")
 
 if query:
     with st.chat_message("user"):
         st.markdown(query)
     llm_function(chat, query)
+
+# Capture the user's name
+user_name = st.text_input("Please enter your name")
+
+# Check if the user has entered a name
+if user_name:
+    # Define Don's response with personalized greeting
+    rex_response = f"Hello, {user_name}! I'm ReX, an assistant powered by Google Gemini. How can I assist you today?"
+    st.write(rex_response)
