@@ -8,7 +8,7 @@ project = "gemini-explorer-424205"
 vertexai.init(project=project)
 
 config = generative_models.GenerationConfig(
-    temperature=0.3
+    temperature=0.4
 )
 model = GenerativeModel(
     "gemini-pro",
@@ -16,8 +16,12 @@ model = GenerativeModel(
 )
 chat = model.start_chat()
 
+# initialize chat history - set the messages into an empty array
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
 # helper function to display and send streamlit messages
-def llm_function(chat, query):
+def llm_function(chat: ChatSession, query):
     response = chat.send_message(query)
     output = response.candidates[0].content.parts[0].text
 
@@ -38,18 +42,29 @@ def llm_function(chat, query):
         }
     )
 
-st.title("Don GPT")
+st.title("Don Explorer")
 
-# initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
 
 # display and load to chat history
 for index, message in enumerate(st.session_state.messages):
     content = Content(
         role = message["role"],
-        parts = Part.from_text(message["content"])
+        parts = [ Part.from_text(message["content"]) ]
     )
+    if index != 0:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
+    chat.history.append(content)
+
+# Check if the user has entered a name
+if len(st.session_state.messages) == 0:
+    # Capture the user's name
+    user_name = st.text_input("Please enter your name")
+    # Define Don's response with personalized greeting
+    if(user_name):
+        initial_prompt = f"Introduce yourself to {user_name} as 'Don Explorer'(an Ai assistant powered by Google Gemini)"
+        llm_function(chat, initial_prompt)
 
 # to capture user input
 query = st.chat_input("Write your message here...")
@@ -58,12 +73,3 @@ if query:
     with st.chat_message("user"):
         st.markdown(query)
     llm_function(chat, query)
-
-# Capture the user's name
-user_name = st.text_input("Please enter your name")
-
-# Check if the user has entered a name
-if user_name:
-    # Define Don's response with personalized greeting
-    don_response = f"Hello, {user_name}! I'm Don, an assistant powered by Google Gemini. How can I assist you today?"
-    st.write(don_response)
