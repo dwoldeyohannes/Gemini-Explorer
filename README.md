@@ -83,21 +83,6 @@ import streamlit as st
 * capture user input effortlessly
 <img width="785" alt="Screen Shot 2024-03-11 at 5 38 13 PM" src="https://github.com/TommyCheng023/Gemini_Explorer/assets/115842289/8139eecd-633a-4de1-a5db-f34ba95304ec">
 
-### Common Issue With Solutions
-1. Any Runtime Error
-solution: insert error-handling structures can avoid crashing your computer
-```python
-try:
-    # your code
-except Exception as e:
-    st.error(f"Issue Failed: {e}")
-    st.stop()
-```
-2. Failed to send message or receive response: 503 DNS resolution failed for us-central1-aiplatform.googleapis.com:443: C-ares status is not ARES_SUCCESS qtype=SRV name=_grpclb._tcp.us-central1-aiplatform.googleapis.com: Timeout while contacting DNS servers
-```python
-import os
-os.environ['GRPC_DNS_RESOLVER'] = 'native'
-```
 ## 5. Add Initial Message
 ### Initial Prompt
 * enhance personality: This is something you can **define** your chatbot. Including what you want it to be called, what its style of chatting is going to be. All those requirements can be included in a string. 
@@ -108,6 +93,3 @@ os.environ['GRPC_DNS_RESOLVER'] = 'native'
 ```zsh
 streamlit run gemini_explorer.py
 ```
-## Appendix
-### Project Certificate
-<img width="1011" alt="Screen Shot 2024-03-13 at 12 50 06 PM" src="https://github.com/TommyCheng023/Gemini_Explorer/assets/115842289/7d139497-0afe-47de-9a5a-98c6a9abfea0">
