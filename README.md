@@ -1,9 +1,9 @@
 # Gemini-Explorer
-##Overview:
+## Overview:
 
 Gemini/Don Explorer is a streamlit Chat Interface integrating Google's advanced language model, Gemini. This project aims to provide an accessible and interactive platform for exploring the capabilities of large language models. Users can seamlessly interact with advanced AI technology by leveraging Streamlit's intuitive interface and the powerful Gemini model.
 
-##Key Features:
+## Key Features:
 
 Interactive Chat Interface: A sleek and responsive chat interface built with Streamlit, designed for seamless user interactions.
 Google Gemini Integration: Utilizes the advanced capabilities of Google's Gemini language model to provide accurate and context-aware responses.
@@ -34,19 +34,11 @@ follow the instructions [here](https://cloud.google.com/cloud-console?utm_source
 
 ## 2. Initialize Google Cloud
 * setup the API server
-<img width="1497" alt="Screen Shot 2024-03-12 at 12 33 03 PM" src="https://github.com/TommyCheng023/Gemini_Explorer/assets/115842289/c2fcfcd3-e879-458d-8fa7-90d6d4853cde">
 
 * install and initialize SDK by typing the following command into the terminal
 ```sh
 gcloud init
 ```
-<img width="619" alt="Screen Shot 2024-03-09 at 2 04 59 PM" src="https://github.com/TommyCheng023/Gemini_Explorer/assets/115842289/a3042499-8630-4a83-8546-bda9806bdcb5">
-
-* verifiy the configuration by typing the following command into the terminal
-```sh
-gcloud config list
-```
-<img width="542" alt="Screen Shot 2024-03-09 at 2 07 03 PM" src="https://github.com/TommyCheng023/Gemini_Explorer/assets/115842289/e185d15a-9d81-4f0e-a3b9-a33a5eb77a48">
 
 * install required packages
 ```sh
@@ -81,13 +73,10 @@ import streamlit as st
 ## 4. Streamlit Integration
 * display and load chat history
 * capture user input effortlessly
-<img width="785" alt="Screen Shot 2024-03-11 at 5 38 13 PM" src="https://github.com/TommyCheng023/Gemini_Explorer/assets/115842289/8139eecd-633a-4de1-a5db-f34ba95304ec">
 
 ## 5. Add Initial Message
 ### Initial Prompt
 * enhance personality: This is something you can **define** your chatbot. Including what you want it to be called, what its style of chatting is going to be. All those requirements can be included in a string. 
-
-<img width="1720" alt="Screen Shot 2024-03-11 at 2 09 51 PM" src="https://github.com/TommyCheng023/Gemini_Explorer/assets/115842289/978a6dc8-626a-4cbe-ba58-d86b805893de">
 
 ## Launch The App
 ```zsh
