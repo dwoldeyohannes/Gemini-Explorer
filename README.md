@@ -1,4 +1,9 @@
 # Gemini-Explorer
+
+# Demo
+
+https://www.loom.com/share/2ad0c2ba4c59420682957c844127f2f0?sid=ebfee4f9-92f6-4713-a9b2-3f44fe9ce75f
+
 ## Overview:
 
 Gemini/Don Explorer is a streamlit Chat Interface integrating Google's advanced language model, Gemini. This project aims to provide an accessible and interactive platform for exploring the capabilities of large language models. Users can seamlessly interact with advanced AI technology by leveraging Streamlit's intuitive interface and the powerful Gemini model.
